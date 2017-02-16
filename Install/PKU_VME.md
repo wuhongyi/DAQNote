@@ -4,9 +4,9 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 三 9月 21 09:23:05 2016 (+0800)
-;; Last-Updated: 四 2月 16 19:38:18 2017 (+0800)
+;; Last-Updated: 四 2月 16 20:15:35 2017 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 11
+;;     Update #: 12
 ;; URL: http://wuhongyi.cn -->
 
 # PKU VME 获取
@@ -28,7 +28,7 @@ exit
 
 babirl下载地址：https://ribf.riken.jp/RIBFDAQ/index.php?DAQ%2FDownload
 
-**当前只测试到150104版本，170125版为尚未测试。**
+**当前只测试到150401版本，170125版为尚未测试。**
 
 ```bash
 cp babirl* ~
