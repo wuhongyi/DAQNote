@@ -4,9 +4,9 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 三 9月 21 09:23:05 2016 (+0800)
-;; Last-Updated: 四 2月 16 20:15:35 2017 (+0800)
+;; Last-Updated: 五 2月 17 21:23:30 2017 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 12
+;;     Update #: 13
 ;; URL: http://wuhongyi.cn -->
 
 # PKU VME 获取
@@ -141,6 +141,20 @@ export TARTSYS=/home/wuhongyi/anaroot
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$TARTSYS/lib:$TARTSYS/sources/Core
 ```
 
+----
 
+## 一些技巧及约定
+
+硬件顺序：SDC、ADC、GDC、MADC
+
+地址分配：V785: 0x1000开始、MADC32: 0x2000开始、V1190: 0x4000开始、V830: 0x5000开始。
+
+GEO分配： ADC:0-19; MADC:20-39; GDC:40-49; SDC:50-59
+
+
+查看有没有数据：  
+```bash
+chkridf -s 0
+```
 
 <!-- PKU_VME.md ends here -->

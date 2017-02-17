@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html lang="" >
     <head>
-        <title>CAEN/N93B* · GitBook</title>
+        <title>CAEN/V2718* · GitBook</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="N96.md" />
+    <link rel="next" href="../ORTEC/572A.md" />
     
     
-    <link rel="prev" href="A2818.md" />
+    <link rel="prev" href="V1190.md" />
     
 
     </head>
@@ -174,7 +174,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.2" data-path="N93B.html">
+        <li class="chapter " data-level="1.3.2" data-path="N93B.html">
             
                 <a href="N93B.html">
             
@@ -265,7 +265,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.9" data-path="V2718.html">
+        <li class="chapter active" data-level="1.3.9" data-path="V2718.html">
             
                 <a href="V2718.html">
             
@@ -404,7 +404,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >CAEN/N93B*</a>
+        <a href="../.." >CAEN/V2718*</a>
     </h1>
 </div>
 
@@ -419,73 +419,29 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <!-- N93B.md --- 
+                                <!-- V2718.md --- 
 ;; 
 ;; Description: 
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
-;; Created: 四 2月 16 20:22:35 2017 (+0800)
-;; Last-Updated: 五 2月 17 16:39:14 2017 (+0800)
+;; Created: 五 2月 17 13:44:23 2017 (+0800)
+;; Last-Updated: 五 2月 17 16:30:52 2017 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 2
+;;     Update #: 3
 ;; URL: http://wuhongyi.cn -->
 
 
-<h1 id="caen-n93b">CAEN N93B</h1><p>DUAL TIMER - mod 2255B</p><p>&#x8BE5;&#x63D2;&#x4EF6;&#x7531;<strong>&#x4E24;&#x7EC4;</strong>&#x5B8C;&#x5168;&#x76F8;&#x540C;&#x7684;&#x89E6;&#x53D1;&#x8109;&#x51B2;&#x4EA7;&#x751F;&#x5668;&#x7EC4;&#x6210;&#x3002;&#x53EF;&#x7528;&#x6765;&#x8C03;&#x8282; NIM &#x53CA; ECL &#x4FE1;&#x53F7;&#x7684;&#x5BBD;&#x5EA6;&#x4ECE; 50 ns &#x5230; 10 s&#x3002;</p><p>The END-MARKER, a short output pulse at the end of the tiiming cycle, can be uesd for delayed triggering of other units or, if fed back into the START input, it provides a self-running rate generator that can be started and stopped at will.</p><p>It is possible to disable start inputs by feeding a NIM signal to the &quot;Veto&quot; input.</p><h2 id="&#x8F93;&#x5165;">&#x8F93;&#x5165;</h2><ul><li><p>START INPUT</p><ul><li>NIM and ECL,leading edge sensitive.
+<h1 id="v2718">V2718</h1><p>The module can work in a &#x201C;multimaster&#x201D; system with the possibility of operating as a system controller, in this case (which is the default option as the board is inserted in the slot 1), it works as Bus Arbiter, Sysclock Driver, IACK Daiy Chain Driver, etc.</p><p>The module features a LED display which allows to monitor the VME bus activity in detail. The front panel features <strong>5 TTL/NIM programmable outputs</strong> on LEMO 00 connectors (default assignment is: <strong>DS, AS, DTACK, BERR signals and the output of a programmable Location Monitor</strong>) and <strong>two programmable TTL/NIM inputs</strong> (on LEMO 00 connectors).</p><p>The V2718 accepts BERR<em> or DTACK</em> as cycle terminations. BERR<em> is handled as cycle termination whether it is produced by the V2718 itself or by another board. The Status word broadcasted as the cycle is acknowledged, informs the PC HOST about the cycle termination type (BERR</em> or DTACK*).</p><p>A programmable bus timer allows users to select a VMEbus time-out period. The time-out period is programmed through the Bus Timeout bit in the Control register ( = 0 &#x2192; timeout = 50 &#x3BC;s; = 1 &#x2192; timeout = 400&#x3BC;s). The VMEbus Timer module asserts BERR if a VMEbus transaction times out (indicated by one of the VMEbus data strobes remaining asserted beyond the time-out period).</p><h2 id="internal-jumpers">Internal jumpers</h2><p>&#x63D2;&#x4EF6;&#x4FA7;&#x9762;&#x53EF;&#x8C03;&#x8282;&#x4F4D;&#x7F6E;&#x7531;&#x4E0A;&#x5F80;&#x4E0B;&#x6709; Firmware Sel.(STD BKP)&#x3001;Base address selection&#x3001;DIP switches(0,1,2,3,4)&#x3001;I/O(NIM TTL)&#x3001;A2719 Firmware Sel.(STD BKP).</p><p>&#x5176;&#x4E2D; DIP switches &#x53EF;&#x9009;&#x62E9;&#x901A;&#x8FC7;System Control&#x3002;<strong>Status register</strong>(Base Address + 0x00, D16, read/write) This register contains information on the status of the module.</p><h2 id="programmable-inputoutput">Programmable Input/Output</h2><p>The V2718 front panel houses 7 LEMO 00 type connectors, 5 outputs and 2 inputs; signals can be either NIM or TTL (dip-switch selectable). Seven green LEDs (one per connector) light up as the relevant signal is active. All the signals can perform several functions, default setting of the output signals is:</p><ul><li>DS (either DS0 or DS1)
 </li>
-<li>Minimum width 5 ns.
+<li>AS
 </li>
-<li>Momentary switch for single cycle operation.
+<li>DTACK
+</li>
+<li>BERR
+</li>
+<li>LMON (output of Location Monitor)
 </li></ul>
-</li>
-<li><p>VETO INPUT</p><ul><li>NIM input
-</li>
-<li>NUM ture level at VETO input desables the START input (within +-2ns of START leading edge)
-</li></ul>
-</li>
-<li><p>RESET INPUT</p><ul><li>NIM input
-</li>
-<li>Minimum width: 7 ns (15 ns for recursive operation)
-</li>
-<li>It can be applied at any point of the time cycle.
-</li>
-<li>Produces END-MARKER
-</li></ul>
-</li></ul>
-<h2 id="&#x8F93;&#x51FA;">&#x8F93;&#x51FA;</h2><ul><li><p>OUTPUTS</p><ul><li>Two normal independent,one complementary NIM output and one ECL.
-</li></ul>
-</li>
-<li><p>WIDTH</p><ul><li>50 ns to 10 s in 9 decade steps, with a potentiometer and locking dial for fine adjustment
-</li>
-<li>Accuracy +-10% of full scale, with adequate range overlap.
-</li>
-<li>Temperature coefficient: 10^{-3}/^{0}C of setting
-</li>
-<li>Switch postion &lt;&lt;&#x65E0;&#x7A77;&gt;&gt; for bistable opreation
-</li></ul>
-</li>
-<li><p>DEAD TIME</p><ul><li>Shorter than the cycle time
-</li>
-<li>The timer can be triggered well before the ehd of the timing cucle.
-</li></ul>
-</li>
-<li><p>RISE/FALL TIME</p><ul><li>&lt;= 2 ns
-</li></ul>
-</li>
-<li><p>INPUT-OUTPUT DELAY</p><ul><li>Delay from Start to leading edge of output,or from Reset to trailing edge,is ~13 ns
-</li></ul>
-</li>
-<li><p>END MARKER</p><ul><li>NIM and ECL output, 15 ns wide output pulse leading edge is coincident with the trailing edge of output within 2 ns.
-</li>
-<li>Can be connected to Start input for free running opreation (sequence activated by the START switch)
-</li></ul>
-</li>
-<li><p>LED</p><ul><li>Flashes for 0.1 s or output width, whichever is longer.
-</li>
-<li>At high rates the lamp has its own flashing rate.
-</li></ul>
-</li></ul>
-<!-- N93B.md ends here -->
+<h2 id="location-monitor">Location Monitor</h2><p>The V2718 monitors the cycles on the bus, whether they are held by itself or by other masters, and produces a Trigger Out LMON signal as soon as a particular cycle is performed. The LMON out is available by default as front panel signal.</p><!-- V2718.md ends here -->
 
 
 
@@ -515,12 +471,12 @@
 
             
                 
-                <a href="A2818.md" class="navigation navigation-prev " aria-label="Previous page: CAEN/A2818">
+                <a href="V1190.md" class="navigation navigation-prev " aria-label="Previous page: CAEN/V1190">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="N96.md" class="navigation navigation-next " aria-label="Next page: CAEN/N96">
+                <a href="../ORTEC/572A.md" class="navigation navigation-next " aria-label="Next page: ORTEC/572A">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -531,7 +487,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"CAEN/N93B*","level":"1.3.2","depth":2,"next":{"title":"CAEN/N96","level":"1.3.3","depth":2,"path":"ElectronicsModules/CAEN/N96.md","ref":"ElectronicsModules/CAEN/N96.md","articles":[]},"previous":{"title":"CAEN/A2818","level":"1.3.1","depth":2,"path":"ElectronicsModules/CAEN/A2818.md","ref":"ElectronicsModules/CAEN/A2818.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ElectronicsModules/CAEN/N93B.md","mtime":"2017-02-17T08:39:14.366Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2017-02-17T14:10:11.696Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"CAEN/V2718*","level":"1.3.9","depth":2,"next":{"title":"ORTEC/572A","level":"1.3.10","depth":2,"path":"ElectronicsModules/ORTEC/572A.md","ref":"ElectronicsModules/ORTEC/572A.md","articles":[]},"previous":{"title":"CAEN/V1190","level":"1.3.8","depth":2,"path":"ElectronicsModules/CAEN/V1190.md","ref":"ElectronicsModules/CAEN/V1190.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ElectronicsModules/CAEN/V2718.md","mtime":"2017-02-17T08:30:52.028Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2017-02-17T14:10:11.696Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
