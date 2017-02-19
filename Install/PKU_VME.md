@@ -4,9 +4,9 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 三 9月 21 09:23:05 2016 (+0800)
-;; Last-Updated: 五 2月 17 21:23:30 2017 (+0800)
+;; Last-Updated: 日 2月 19 18:52:53 2017 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 13
+;;     Update #: 16
 ;; URL: http://wuhongyi.cn -->
 
 # PKU VME 获取
@@ -14,7 +14,7 @@
 PKU VME 获取是基于 Riken DAQ 获取发展而来。
 
 
-统安装完成之后，建议关闭防火墙：
+系统安装完成之后，建议关闭防火墙：
 
 ```bash
 su
@@ -156,5 +156,13 @@ GEO分配： ADC:0-19; MADC:20-39; GDC:40-49; SDC:50-59
 ```bash
 chkridf -s 0
 ```
+
+
+
+
+总trigger进 N93B（N93B调节到无穷档），输出需要分成多路，其中给V830、V785、MADC32的需要把这个门展宽，给V1190的需要延迟之后再输入。（V830、V785串联即可，V1190自己串联即可，MADC32需要每个单独从第一个孔输入）
+
+V2718 LEMO 口4接到 N93B 的RESET孔上，这样获取在完成一个event的采集之后给N93B发送重置信号。
+
 
 <!-- PKU_VME.md ends here -->
