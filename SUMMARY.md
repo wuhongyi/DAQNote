@@ -6,6 +6,7 @@
 	- [PKU_VME*](Install/PKU_VME.md)
 * [插件说明](ElectronicsModules/README.md)
 	- [CAEN/A2818](ElectronicsModules/CAEN/A2818.md)
+	- [CAEN/N113*](ElectronicsModules/CAEN/N113.md)
 	- [CAEN/N93B*](ElectronicsModules/CAEN/N93B.md)
 	- [CAEN/N96](ElectronicsModules/CAEN/N96.md)
 	- [CAEN/N454](ElectronicsModules/CAEN/N454.md)
