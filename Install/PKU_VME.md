@@ -4,9 +4,9 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 三 9月 21 09:23:05 2016 (+0800)
-;; Last-Updated: 日 2月 19 18:52:53 2017 (+0800)
+;; Last-Updated: 四 3月  9 22:14:21 2017 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 16
+;;     Update #: 19
 ;; URL: http://wuhongyi.cn -->
 
 # PKU VME 获取
@@ -82,7 +82,7 @@ exit
 bbcanvme/lib 将CAEN的官方库进行了一次封装，得到了一些函数名相对简化的函数。供babies、module和cmdvme使用。  
 cmdvme使用了libbbcaenvme中的命令，可以读取或者写入插件某一个寄存器地址。  
 module中各个插件调用了libbabies和libbbcaenvme来完成插件动作的定义。  
-babies调用以上所有来完成event的构建。主要修改文件有start/evt/clear/stop的C文件。
+babies调用以上所有来完成event的构建。主要修改文件有bbmodules.h/start/evt/clear/stop的C文件。
 
 
 ```bash
@@ -149,7 +149,7 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$TARTSYS/lib:$TARTSYS/sources/Core
 
 地址分配：V785: 0x1000开始、MADC32: 0x2000开始、V1190: 0x4000开始、V830: 0x5000开始。
 
-GEO分配： ADC:0-19; MADC:20-39; GDC:40-49; SDC:50-59
+GEO分配： ADC:0-9; MADC:10-19; GDC:20-29; SDC:30-31
 
 
 查看有没有数据：  
