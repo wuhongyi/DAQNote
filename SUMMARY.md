@@ -24,7 +24,7 @@
 	- [MESYTEC/MSCF16-F+](ElectronicsModules/MESYTEC/MSCF16_F.md)
 	- [ORTEC/572A](ElectronicsModules/ORTEC/572A.md)
 	- [ORTEC/710](ElectronicsModules/ORTEC/710.md)
-	- [ORTEC/CO4020](ElectronicsModules/ORTEC/CO4020.md)
+	- [ORTEC/CO4020*](ElectronicsModules/ORTEC/CO4020.md)
 	- [ORTEC/GG8020](ElectronicsModules/ORTEC/GG8020.md)
 	- [PHILLIPS/726*](ElectronicsModules/PHILLIPS/726.md)
 	- [PHILLIPS/758*](ElectronicsModules/PHILLIPS/758.md)
