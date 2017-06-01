@@ -4,12 +4,15 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 三 3月  8 21:57:55 2017 (+0800)
-;; Last-Updated: 三 3月  8 22:10:00 2017 (+0800)
+;; Last-Updated: 四 6月  1 10:09:37 2017 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 1
+;;     Update #: 2
 ;; URL: http://wuhongyi.cn -->
 
 # MPR-16
+
+说明书 [MPR-16](/pdf/ElectronicsModules/MESYTEC/MPR-16.pdf)  [MPR-16-L](/pdf/ElectronicsModules/MESYTEC/MPR-16-L.pdf)  [MPR-16-LOG](/pdf/ElectronicsModules/MESYTEC/MPR-16-LOG.pdf)
+
 
 The mesytec MPR-Series provides a set of state of the art multichannel preamplifier modules specially designed for single or double sided multistrip silicon detectors.The MPR series can be used as stand alone modules and can also easily be combined with the mesytec MSCF-16 or STM-16 shaping-/timing filter/ discriminator module.
 
