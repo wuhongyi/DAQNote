@@ -4,14 +4,14 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 三 3月  8 20:11:05 2017 (+0800)
-;; Last-Updated: 四 6月  1 10:12:02 2017 (+0800)
+;; Last-Updated: 五 6月  2 18:18:18 2017 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 3
+;;     Update #: 4
 ;; URL: http://wuhongyi.cn -->
 
 # MSCF16_F
 
-说明书 [MSCF16-F-C](/pdf/ElectronicsModules/MESYTEC/MSCF16-F-C.pdf)  说明书 [MSCF16-F-V](/pdf/ElectronicsModules/MESYTEC/MSCF16-F-V.pdf)  说明书 [MSCF16-LN](/pdf/ElectronicsModules/MESYTEC/MSCF16-LN.pdf)
+说明书 [MSCF16-F-C](http://wuhongyi.cn/DAQNote/pdf/ElectronicsModules/MESYTEC/MSCF16-F-C.pdf)  说明书 [MSCF16-F-V](http://wuhongyi.cn/DAQNote/pdf/ElectronicsModules/MESYTEC/MSCF16-F-V.pdf)  说明书 [MSCF16-LN](http://wuhongyi.cn/DAQNote/pdf/ElectronicsModules/MESYTEC/MSCF16-LN.pdf)
 
 
 mesytec MSCF-16 F is a shaping / timing filter amplifier with constant fraction discriminator and multiplicity trigger and provides active baseline restorers. It is well suited for multi strip silicon detectors and for high quality spectroscopy applications. The differential input version is ideal with the pre amplifier family MPR-16 / -32 / -64.  
