@@ -2,12 +2,12 @@
 <!DOCTYPE HTML>
 <html lang="" >
     <head>
-        <title>PHILLIPS/794* · GitBook</title>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>PHILLIPS/794* · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.0">
+        <meta name="generator" content="GitBook 3.2.2">
         
         
         
@@ -1183,124 +1183,117 @@
 ;;           By: Hongyi Wu(吴鸿毅)
 ;;     Update #: 5
 ;; URL: http://wuhongyi.cn -->
-
-
-<h1 id="794-quad-gatedelay-generator">794 QUAD GATE/DELAY GENERATOR</h1><p>&#x8BF4;&#x660E;&#x4E66; <a href="http://wuhongyi.cn/DAQNote/pdf/ElectronicsModules/PHILLIPS/794ds.pdf" target="_blank">794</a></p><h2 id="features">FEATURES</h2><ul><li>Four Independent Gate/Delay Channels
+<h1 id="794-quad-gatedelay-generator">794 QUAD GATE/DELAY GENERATOR</h1>
+<p>&#x8BF4;&#x660E;&#x4E66; <a href="http://wuhongyi.cn/DAQNote/pdf/ElectronicsModules/PHILLIPS/794ds.pdf" target="_blank">794</a></p>
+<h2 id="features">FEATURES</h2>
+<ul>
+<li>Four Independent Gate/Delay Channels</li>
+<li>Wide Range, 50 nSec to over 10 Seconds</li>
+<li>NIM, TTL Inputs; NIM, TTL, ECL Outputs</li>
+<li>Deadtimeless Operation</li>
+<li>Set/Reset Flip-Flop Mode</li>
+<li>Remote Programming via a 0 Volt to 10 Volt Input</li>
+<li>Easily Configured as an Oscillator or a Pulser</li>
+<li>Provides Bin Gate for Host NIMBIN</li>
+</ul>
+<p>A bright LED indicates an active gate condition. Versatile input and output structures provide compatibility with NIM, ECL, and TTL standards.</p>
+<p>Further flexibility is afforded by <strong>programming jumpers</strong> mounted on the printed circuit board. These jumpers allow selected inputs and outputs to be assigned alternate logic functions or polarities.</p>
+<p>The model 794 time-base circuit is non-updating and exhibits essentially <strong>no deadtime</strong>.
+The DELAY output always occurs at the trailing edge of the GATE output and it&apos;s output width may be adjusted by a front panel potentiometer.</p>
+<h2 id="input-characteristics">INPUT CHARACTERISTICS</h2>
+<ul>
+<li>Trigger<ul>
+<li>LEMO style connector;</li>
+<li>1 K ohm impedance for positive TTL logic levels;</li>
+<li>50 ohm for negative NIM logic;</li>
+<li>Positive LOGIC 0: less than +0.5 Volt; LOGIC 1: greater than +1.5 Volt.</li>
+<li>Negative NIM logic levels; LOGIC 0: less than &#xB1;1mA, (&#xB1;50mV), LOGIC 1: --14mA, (--700mVolt).</li>
+</ul>
 </li>
-<li>Wide Range, 50 nSec to over 10 Seconds
+<li>OR<ul>
+<li>LEMO style connector; Negative NIM level input, LOGIC 0 = &#xB1;50mVolts, LOGIC 1 = --700mVolts.</li>
+<li>A jumper allows selection of 50 ohm or 1 K ohm input impedance;</li>
+<li>&quot;OR is shipped as high impedance input OR&quot;.</li>
+</ul>
 </li>
-<li>NIM, TTL Inputs; NIM, TTL, ECL Outputs
+<li>Inhibit<ul>
+<li>LEMO style connector;</li>
+<li>Negative NIM input levels; 50 ohm impedance.</li>
+<li>Forces all outputs to their quiescent state.</li>
+</ul>
 </li>
-<li>Deadtimeless Operation
+<li>Reset<ul>
+<li>LEMO style connector;</li>
+<li>Negative NIM input levels; 50 ohms;</li>
+<li>Enabled only in bistable mode.</li>
+</ul>
 </li>
-<li>Set/Reset Flip-Flop Mode
+<li>Analog Remote Programming<ul>
+<li>Isolated ground LEMO style connector; High impedance, differentially received; An external analog input allows remote programming from 5% to 105% of selected range with 0 to +10 Volt input.</li>
+<li>Maximum input voltage: Differential = --6 Volt to +12 Volts. Common Mode = &#xB1;6 Volts.</li>
+<li>Recommended Input Voltage: Differential = 0 to +10.0 Volts. Common Mode = &#xB1;0.5 Volt.</li>
+</ul>
 </li>
-<li>Remote Programming via a 0 Volt to 10 Volt Input
+</ul>
+<p>Propagation Delay</p>
+<ul>
+<li>TRIGGER to:<ul>
+<li>GATE = 11 nSec max.</li>
+<li>TTL = 20 nSec max.</li>
+<li>ECL = 11nSec max.</li>
+</ul>
 </li>
-<li>Easily Configured as an Oscillator or a Pulser
+<li>RESET to:<ul>
+<li>GATE = 11nSec max.</li>
+<li>TTL = 20nSec max.</li>
+<li>ECL = 11nSec max.</li>
+</ul>
 </li>
-<li>Provides Bin Gate for Host NIMBIN
-</li></ul>
-<p>A bright LED indicates an active gate condition. Versatile input and output structures provide compatibility with NIM, ECL, and TTL standards.</p><p>Further flexibility is afforded by <strong>programming jumpers</strong> mounted on the printed circuit board. These jumpers allow selected inputs and outputs to be assigned alternate logic functions or polarities.</p><p>The model 794 time-base circuit is non-updating and exhibits essentially <strong>no deadtime</strong>.
-The DELAY output always occurs at the trailing edge of the GATE output and it&apos;s output width may be adjusted by a front panel potentiometer.</p><h2 id="input-characteristics">INPUT CHARACTERISTICS</h2><ul><li><p>Trigger</p><ul><li>LEMO style connector;
+<li>OR to:<ul>
+<li>GATE = 8nSec max.</li>
+<li>TTL = 15nSec max.</li>
+<li>ECL = 8nSec max.</li>
+</ul>
 </li>
-<li>1 K ohm impedance for positive TTL logic levels;
+<li>INHIBIT to:<ul>
+<li>GATE = 6nSec max.</li>
+<li>TTL = 15nSec max.</li>
+<li>ECL = 8nSec max.</li>
+</ul>
 </li>
-<li>50 ohm for negative NIM logic;
+</ul>
+<h2 id="output-characteristics">OUTPUT CHARACTERISTICS</h2>
+<ul>
+<li>Gate<ul>
+<li>Negative NIM current source output; --16mA, (--800mV into 50 ohms). Output duration equals the
+RANGE SWITCH setting in conjunction with the GATE WIDTH control setting.</li>
+</ul>
 </li>
-<li>Positive LOGIC 0: less than +0.5 Volt; LOGIC 1: greater than +1.5 Volt.
+<li>complemented Gate<ul>
+<li>Negative NIM current source output; The complement of GATE output.</li>
+</ul>
 </li>
-<li>Negative NIM logic levels; LOGIC 0: less than &#xB1;1mA, (&#xB1;50mV), LOGIC 1: --14mA, (--700mVolt).
-</li></ul>
+<li>Delay<ul>
+<li>Negative NIM output pulse; Begins at the trailing edge of GATE output; Width is adjustable from
+10nSec to 100nSec.</li>
+</ul>
 </li>
-<li><p>OR</p><ul><li>LEMO style connector; Negative NIM level input, LOGIC 0 = &#xB1;50mVolts, LOGIC 1 = --700mVolts.
+<li>TTL<ul>
+<li>A TTL logic level output; Capable of driving a single 50 ohm load or up to 60 standard TTL inputs.</li>
+<li>LOGICAL 1 = 2.7 Volt min. @ 45mA max; LOGIC 0 = 0.5 Volt max. @ --100mA max; The TTL output can be jumper selected to be GATE, DELAY or their complements.</li>
+<li>&quot;TTL is shipped as GATE&quot;.</li>
+</ul>
 </li>
-<li>A jumper allows selection of 50 ohm or 1 K ohm input impedance;
+<li>ECL Outputs<ul>
+<li>ECL is a two pin header; 0.025&quot; posts on 0.1&quot; centers. Output is a differential 100 ohm line driver.</li>
+<li>Jumper selected to be GATE, DELAY or their complements.</li>
+<li>ECL + : Quiescently LOGIC 0 = --1.7 Volt typ. LOGIC 1 = --0.90 Volt typ.</li>
+<li>ECL - : Quiescently LOGIC 0 = --0.90 Volt typ. LOGIC 1 = --1.7 Volt typ.</li>
+<li>&quot;ECL is shipped as GATE&quot;.</li>
+</ul>
 </li>
-<li>&quot;OR is shipped as high impedance input OR&quot;.
-</li></ul>
-</li>
-<li><p>Inhibit</p><ul><li>LEMO style connector;
-</li>
-<li>Negative NIM input levels; 50 ohm impedance.
-</li>
-<li>Forces all outputs to their quiescent state.
-</li></ul>
-</li>
-<li><p>Reset</p><ul><li>LEMO style connector;
-</li>
-<li>Negative NIM input levels; 50 ohms;
-</li>
-<li>Enabled only in bistable mode.
-</li></ul>
-</li>
-<li><p>Analog Remote Programming</p><ul><li>Isolated ground LEMO style connector; High impedance, differentially received; An external analog input allows remote programming from 5% to 105% of selected range with 0 to +10 Volt input.
-</li>
-<li>Maximum input voltage: Differential = --6 Volt to +12 Volts. Common Mode = &#xB1;6 Volts.
-</li>
-<li>Recommended Input Voltage: Differential = 0 to +10.0 Volts. Common Mode = &#xB1;0.5 Volt.
-</li></ul>
-</li></ul>
-<p>Propagation Delay</p><ul><li><p>TRIGGER to:</p><ul><li>GATE = 11 nSec max.
-</li>
-<li>TTL = 20 nSec max.
-</li>
-<li>ECL = 11nSec max.
-</li></ul>
-</li>
-<li><p>RESET to:</p><ul><li>GATE = 11nSec max.
-</li>
-<li>TTL = 20nSec max.
-</li>
-<li>ECL = 11nSec max.
-</li></ul>
-</li>
-<li><p>OR to:</p><ul><li>GATE = 8nSec max.
-</li>
-<li>TTL = 15nSec max.
-</li>
-<li>ECL = 8nSec max.
-</li></ul>
-</li>
-<li><p>INHIBIT to:</p><ul><li>GATE = 6nSec max.
-</li>
-<li>TTL = 15nSec max.
-</li>
-<li>ECL = 8nSec max.
-</li></ul>
-</li></ul>
-<h2 id="output-characteristics">OUTPUT CHARACTERISTICS</h2><ul><li><p>Gate</p><ul><li>Negative NIM current source output; --16mA, (--800mV into 50 ohms). Output duration equals the
-RANGE SWITCH setting in conjunction with the GATE WIDTH control setting.
-</li></ul>
-</li>
-<li><p>complemented Gate</p><ul><li>Negative NIM current source output; The complement of GATE output.
-</li></ul>
-</li>
-<li><p>Delay</p><ul><li>Negative NIM output pulse; Begins at the trailing edge of GATE output; Width is adjustable from
-10nSec to 100nSec.
-</li></ul>
-</li>
-<li><p>TTL</p><ul><li>A TTL logic level output; Capable of driving a single 50 ohm load or up to 60 standard TTL inputs.
-</li>
-<li>LOGICAL 1 = 2.7 Volt min. @ 45mA max; LOGIC 0 = 0.5 Volt max. @ --100mA max; The TTL output can be jumper selected to be GATE, DELAY or their complements.
-</li>
-<li>&quot;TTL is shipped as GATE&quot;.
-</li></ul>
-</li>
-<li><p>ECL Outputs</p><ul><li>ECL is a two pin header; 0.025&quot; posts on 0.1&quot; centers. Output is a differential 100 ohm line driver.
-</li>
-<li>Jumper selected to be GATE, DELAY or their complements.
-</li>
-<li>ECL + : Quiescently LOGIC 0 = --1.7 Volt typ. LOGIC 1 = --0.90 Volt typ.
-</li>
-<li>ECL - : Quiescently LOGIC 0 = --0.90 Volt typ. LOGIC 1 = --1.7 Volt typ.
-</li>
-<li>&quot;ECL is shipped as GATE&quot;.
-</li></ul>
-</li></ul>
+</ul>
 <!-- 794.md ends here -->
-
-
 
                                 
                                 </section>
@@ -1344,7 +1337,7 @@ RANGE SWITCH setting in conjunction with the GATE WIDTH control setting.
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"PHILLIPS/794*","level":"1.3.73","depth":2,"next":{"title":"远程控制","level":"1.4","depth":1,"path":"Remote/README.md","ref":"Remote/README.md","articles":[]},"previous":{"title":"PHILLIPS/758*","level":"1.3.72","depth":2,"path":"ElectronicsModules/PHILLIPS/758.md","ref":"ElectronicsModules/PHILLIPS/758.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ElectronicsModules/PHILLIPS/794.md","mtime":"2017-06-02T10:20:40.097Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2017-06-02T10:22:38.036Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"PHILLIPS/794*","level":"1.3.73","depth":2,"next":{"title":"远程控制","level":"1.4","depth":1,"path":"Remote/README.md","ref":"Remote/README.md","articles":[]},"previous":{"title":"PHILLIPS/758*","level":"1.3.72","depth":2,"path":"ElectronicsModules/PHILLIPS/758.md","ref":"ElectronicsModules/PHILLIPS/758.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ElectronicsModules/PHILLIPS/794.md","mtime":"2017-06-02T10:20:40.097Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-28T14:57:53.090Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

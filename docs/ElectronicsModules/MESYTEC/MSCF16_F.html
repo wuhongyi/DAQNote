@@ -2,12 +2,12 @@
 <!DOCTYPE HTML>
 <html lang="" >
     <head>
-        <title>MESYTEC/MSCF16-F+ · GitBook</title>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>MESYTEC/MSCF16-F+ · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.0">
+        <meta name="generator" content="GitBook 3.2.2">
         
         
         
@@ -1183,155 +1183,172 @@
 ;;           By: Hongyi Wu(吴鸿毅)
 ;;     Update #: 4
 ;; URL: http://wuhongyi.cn -->
-
-
-<h1 id="mscf16f">MSCF16_F</h1><p>&#x8BF4;&#x660E;&#x4E66; <a href="http://wuhongyi.cn/DAQNote/pdf/ElectronicsModules/MESYTEC/MSCF16-F-C.pdf" target="_blank">MSCF16-F-C</a>  &#x8BF4;&#x660E;&#x4E66; <a href="http://wuhongyi.cn/DAQNote/pdf/ElectronicsModules/MESYTEC/MSCF16-F-V.pdf" target="_blank">MSCF16-F-V</a>  &#x8BF4;&#x660E;&#x4E66; <a href="http://wuhongyi.cn/DAQNote/pdf/ElectronicsModules/MESYTEC/MSCF16-LN.pdf" target="_blank">MSCF16-LN</a></p><p>mesytec MSCF-16 F is a shaping / timing filter amplifier with constant fraction discriminator and multiplicity trigger and provides active baseline restorers. It is well suited for multi strip silicon detectors and for high quality spectroscopy applications. The differential input version is ideal with the pre amplifier family MPR-16 / -32 / -64.</p><p>For Ge-detectors see data sheet for MSCF-16 LN. For direct PMT interfacing see data sheet MSCF-16-F-C.</p><h2 id="features">Features</h2><ul><li>16 channel NIM module, low power design
-</li>
-<li>Shaping amplifier with active baseline restorer
-</li>
-<li>Timing filter amplifier
-</li>
-<li>CF discriminators (opt.: leading edge)
-</li>
-<li>ECL timing output with digital delay of 450 ns
-</li>
-<li>Trigger output (NIM)
-</li>
-<li>Multiplicity trigger (NIM)
-</li>
-<li>Remote control of discriminator thresholds, shaping time, gains, PZ, threshold
-</li>
-<li>4 shaping times
-</li>
-<li>Gain adjustable from 1 to 600 (optional 2000)
-</li>
-<li>Differential or unipolar (Lemo) input versions.
-</li>
-<li>Low noise: &lt;7 uV (gain = 100 and shaping time = 2 us)
-</li>
-<li>Low integral non-linearity
-</li>
-<li>Fully controllable via front panel
-</li>
-<li>Remote control via USB and mesytec control bus
-</li>
-<li>4 selectable timing filter integration times
-</li>
-<li>ECL timing delay can be switched off
-</li></ul>
-<hr><h2 id="technical-data">Technical Data</h2><h3 id="input-stage">Input stage</h3><ul><li>Polarity setting
-</li></ul>
-<p>Polarity of input signal can be set by jumper position. In the picture below, the lower jumper is set to the two positions.</p><p><img alt="Polarity Setting" src="../../img/MSCF16FPolaritySetting.png"></p><p>For header connector, positive signal means: positive at + input and negative on &#x2013; input.</p><ul><li>Gain adjust
-</li></ul>
-<p>gain can be set from 1 to 20 in 16 steps with factor 1.22 per step. The gain is multiplied with the gain jumper factor. So with a gain jumper G2, and G30 a total gain of 2 to 600 is standard.</p><h3 id="unipolar-version">unipolar version</h3><ul><li>Input connectors: 16 x Lemo 00 series
-</li>
-<li>Input termination: 50 &#x3A9;, coded on the gain-polarity jumper are possible. Gain jumpers from gain = 1 to 95 are possible. See table for details
-</li></ul>
-<h3 id="differential-version">differential version</h3><ul><li>Input connector: 34 pin male connector
-</li>
-<li>Input resistance: terminated with 100 &#x3A9;, adapted to twisted pair cables.
-</li>
-<li>Gain-Polarity jumper with multiplication factor of G2 and G30 are standard. (Total Gain range from 2 to 600)
-</li>
-<li>Common mode suppression: &gt;50 dB
-</li></ul>
-<p>When using unipolar jumpers for MSCF-16 with 34 pin input header connectors, the &quot;-&quot; lines are grounded. MHL-32 or MAD-34 adaptors can be used to interface to Lemo.</p><h3 id="noise">Noise</h3><p>Input noise at gain = 100 and 2 us shaping time = 7 uVrms.</p><h3 id="shaper">Shaper</h3><ul><li>PZ adjustable with front panel trimmer
-</li>
-<li>5 th order filter CR-RC5
-</li>
-<li>Four shaping times selectable for groups of 4 channels
-</li>
-<li>Output amplitude: 0 to 10 V at 1 k&#x3A9;
-</li>
-<li>Active baseline restorer
-</li>
-<li>DC-Offset: VDC &#x2190; 5 mV, common offset adjust
-</li>
-<li>Output connector: 34 pin male connector
-</li>
-<li>Integral non linearity &lt;0.05 %
-</li>
-<li>gain drift &lt;0.0075 % /&#xB0;C
-</li>
-<li>Offset drift &lt;50 uV /&#xB0;C
-</li></ul>
-<h3 id="timing-filter-amplifier">Timing filter amplifier</h3><ul><li>Four selectable integration times.
-</li>
-<li>Differentiation times are selected with shaping time (See Table).
-</li></ul>
-<h3 id="discriminator">Discriminator</h3><ul><li>CFD or Leading edge (jumper selectable)
-</li>
-<li>CFD delays, and fraction selectable for group of 4 channels
-</li>
-<li>CFD &#x2013; Walk: for 30 ns (10 % to 90 %) input rise time, &#xB1;1 ns (dynamic range 100:1)
-</li>
-<li>Threshold: adjustable, 0 % to 30 % of maximum range, in 256 steps
-</li>
-<li>CFD fractions: selectable for groups of 4: 20 % or 40 %
-</li>
-<li>CFD &#x2013; Walk: for 30 ns (10 % to 90 %) input rise time, max 1 ns (dynamic range 100:1)
-</li></ul>
-<p><img alt="Fraction And Delay" src="../../img/MSCF16FFractionAndDelay.png"></p><h3 id="timing-delay-ecl-output">Timing delay, ECL output</h3><ul><li>Pulse width for NIM trigger output: 450 ns
-</li>
-<li>Timing stop ECL-Signals: delay see table, can be switched off. Pulse width 200 ns
-</li>
-<li>Output connector: 34 pin male connector
-</li></ul>
-<h3 id="multiplicity-trigger">Multiplicity trigger</h3><ul><li>Each channel above threshold contributes to multiplicity level, a multiplicity trigger is generated for: lower multiplicity threshold &lt;= multiplicity ; level &lt;= upper multiplicity threshold
-</li>
-<li>Coincidence interval adjustable via RC from 20 ns up to 200 ns (default 120 ns = Value 128).
-</li>
-<li>The multiplicity trigger is delayed by the coincidence time to the trigger signal.
-</li>
-<li>Multiplicities selectable via remote control
-</li>
-<li>Lower multiplicity threshold: 1 ... 8 and inf
-</li>
-<li>Multiplicity chaining: multiplicity outputs from several modules can be connected, resulting in a total multiplicity level of all connected modules. Multiplicity trigger windows of the connected modules act independently on the total multiplicity.
-</li></ul>
-<hr><h2 id="mscf-16-front-panel-operation">MSCF-16 Front panel Operation</h2><p>Most MSCF-16 parameters can be set and controlled via front panel elements.</p><p>Two parameters can be adjusted for each channel individually:</p><ul><li>threshold
-</li>
-<li>PZ compensation
-</li></ul>
-<p>Two parameters can be adjusted in groups of four channels (channel 1&#x2013;4 , 5&#x2013;8 , 9&#x2013;12 and 13&#x2013;16 ):</p><ul><li>Gain
-</li>
-<li>Shaping time
-</li></ul>
-<p>Three parameters can be set only for all channels by switches on the motherboard:</p><ul><li>Baseline restorer (BLK) on / off
-</li>
-<li>Timing (ECL) delay on / off
-</li>
-<li>TF integration: four times (see table)
-</li></ul>
-<p>All parameters can as well be set up for all channels in common. Thus there are two different modes of front panel operation:</p><ul><li>Common mode: Threshold, PZ, Gain and Shaping time have a common setting for all channels
-</li>
-<li>Single mode: Threshold and PZ settings for each individual channel ; Gain and Shaping time for each groups of four channels
-</li></ul>
-<p>Common parameters can be copied to individual parameters to easily get a basis for individual settings. this is done by clicking the &#x201C;Single chan&#x201D; knob while &#x201C;enter&#x201D; is pressed</p><h3 id="mode-select">Mode select</h3><p>Clicking the &#x201C;single chan&#x201D; knob switches between single and common operating mode. The orange LED associated with the &#x201C;single chan&#x201D; knob signals single channel mode when lighted.</p><h3 id="monitor--active-channel">Monitor / Active Channel</h3><p>One out of 16 available channels is available at the energy and timing monitor outputs. This is also the channel to be modified in Single mode.</p><h3 id="shaping-time">Shaping time</h3><p>Shaping times are changed around by clicking the &#x201C;Sht&#x201D; knob, the shaping time value of the currently selected channel (group) is displayed by two LEDs. They indicate an index from 0 (&#x201C;1&#x201D; and &#x201C;2&#x201D; LEDs both off) up to 3 (both LEDs on). Please refer to individual device labelling for corresponding shaping times.</p><h3 id="gain">Gain</h3><p>Gain values are set by the gain dial, gain values are indicated on the front panel. Gain ranges from 1.0 to 20.0. It can be set commonly for all channels or individual for groups of four channels.</p><h3 id="threshold">Threshold</h3><p>Threshold is adjusted with a front panel trimmer, the corresponding voltage can be drawn from the test output. It can be set commonly for all channels or individually for each channel.</p><h3 id="pz">PZ</h3><p>PZ compensation is also adjusted with a front panel trimmer, the corresponding voltage level is output on the test point. It can be set commonly for all channels or individually for each channel.</p><hr><h2 id="general-setup">General setup</h2><h3 id="common-mode">Common mode</h3><p>In common mode, the trimmer settings for threshold and PZ are followed immediately.</p><p>Shaping time can be selected for all channels clicking the &quot;Sht&quot; knob. Gain is set for all channels by selecting the desired gain switch position.</p><h3 id="individual-mode">Individual mode</h3><p>In individual channel mode, trimmer changes are only read and activated when the &#x201C;enter&#x201D; knob is pressed during changes. Threshold and PZ settings are remembered individually for each channel.</p><p>Shaping times and gains are valid for a group of four channels.</p><h3 id="copying-from-common-to-individual">Copying from Common to Individual</h3><p>For an easy basic setup, common settings can be copied to the individual section. Fine tuning can then be done based on this basic setup.</p><p>Copy is done by clicking the &#x201C;Single chan&#x201D; knob while &#x201C;enter&#x201D; is pressed.</p><h3 id="auto-pz-setup">Auto PZ setup</h3><p>The PZ compensation values can be set up automatically &#x2013; provided there&#x2019;s a signal at the respective channels.</p><p>Holding the &#x201C;Single chan&#x201D; knob for about two seconds starts the automatic pz setup. The values found are saved in the individual parameter set.</p><p>Clicking &#x201C;Single chan&#x201D; again during autopz breaks the process.</p><h2 id="remote-controlled-operation">Remote Controlled Operation</h2><p>MSCF-16 can be remotely controlled in two ways: USB control and mesytec control bus.</p><p>MSCF-16 has two complete parameter sets, one for front panel operation, one for remote control.</p><p>Switching RC on and off switches between these two parameter sets.</p><p>In RC mode there are several more parameters, which will also be used (but can not be controlled) in front panel mode:</p><ul><li>Coincidence time window
-</li>
-<li>BLR threshold
-</li>
-<li>Multiplicity trigger thresholds
-</li></ul>
-<p>Only for factory setting or experts:</p><ul><li>Shaper offset
-</li>
-<li>discriminator threshold offset
-</li></ul>
-<hr><p><img alt="MSCF-16 PCB overview" src="../../img/MSCF16FPCB.png"></p><ul><li>1: Position for the active gain-polarity jumpers.
-</li>
-<li>2: Position to store up to 4 spare jumpers
-</li>
-<li>3: BLR on/off, ECL Trigger delay on/off
-</li>
-<li>4: Timing filter integration time
-</li>
-<li>5: 50 Ohm jumper. Is needed if modules are not connected for common multiplicity.
-</li>
-<li>6-9: Connector usually occupied by CFD modules. To use only leading edge discriminators, remove CFD module and insert 16 jumpers at the upper positions, 4 for each connector. The lower pair on each connector is ground and can be left free.
-</li></ul>
+<h1 id="mscf16f">MSCF16_F</h1>
+<p>&#x8BF4;&#x660E;&#x4E66; <a href="http://wuhongyi.cn/DAQNote/pdf/ElectronicsModules/MESYTEC/MSCF16-F-C.pdf" target="_blank">MSCF16-F-C</a>  &#x8BF4;&#x660E;&#x4E66; <a href="http://wuhongyi.cn/DAQNote/pdf/ElectronicsModules/MESYTEC/MSCF16-F-V.pdf" target="_blank">MSCF16-F-V</a>  &#x8BF4;&#x660E;&#x4E66; <a href="http://wuhongyi.cn/DAQNote/pdf/ElectronicsModules/MESYTEC/MSCF16-LN.pdf" target="_blank">MSCF16-LN</a></p>
+<p>mesytec MSCF-16 F is a shaping / timing filter amplifier with constant fraction discriminator and multiplicity trigger and provides active baseline restorers. It is well suited for multi strip silicon detectors and for high quality spectroscopy applications. The differential input version is ideal with the pre amplifier family MPR-16 / -32 / -64.<br>For Ge-detectors see data sheet for MSCF-16 LN. For direct PMT interfacing see data sheet MSCF-16-F-C.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li>16 channel NIM module, low power design</li>
+<li>Shaping amplifier with active baseline restorer</li>
+<li>Timing filter amplifier</li>
+<li>CF discriminators (opt.: leading edge)</li>
+<li>ECL timing output with digital delay of 450 ns</li>
+<li>Trigger output (NIM)</li>
+<li>Multiplicity trigger (NIM)</li>
+<li>Remote control of discriminator thresholds, shaping time, gains, PZ, threshold</li>
+<li>4 shaping times</li>
+<li>Gain adjustable from 1 to 600 (optional 2000)</li>
+<li>Differential or unipolar (Lemo) input versions.</li>
+<li>Low noise: &lt;7 uV (gain = 100 and shaping time = 2 us)</li>
+<li>Low integral non-linearity</li>
+<li>Fully controllable via front panel</li>
+<li>Remote control via USB and mesytec control bus</li>
+<li>4 selectable timing filter integration times</li>
+<li>ECL timing delay can be switched off</li>
+</ul>
+<hr>
+<h2 id="technical-data">Technical Data</h2>
+<h3 id="input-stage">Input stage</h3>
+<ul>
+<li>Polarity setting</li>
+</ul>
+<p>Polarity of input signal can be set by jumper position. In the picture below, the lower jumper is set to the two positions.</p>
+<p><img src="../../img/MSCF16FPolaritySetting.png" alt="Polarity Setting"></p>
+<p>For header connector, positive signal means: positive at + input and negative on &#x2013; input.</p>
+<ul>
+<li>Gain adjust</li>
+</ul>
+<p>gain can be set from 1 to 20 in 16 steps with factor 1.22 per step. The gain is multiplied with the gain jumper factor. So with a gain jumper G2, and G30 a total gain of 2 to 600 is standard.</p>
+<h3 id="unipolar-version">unipolar version</h3>
+<ul>
+<li>Input connectors: 16 x Lemo 00 series</li>
+<li>Input termination: 50 &#x3A9;, coded on the gain-polarity jumper are possible. Gain jumpers from gain = 1 to 95 are possible. See table for details</li>
+</ul>
+<h3 id="differential-version">differential version</h3>
+<ul>
+<li>Input connector: 34 pin male connector</li>
+<li>Input resistance: terminated with 100 &#x3A9;, adapted to twisted pair cables.</li>
+<li>Gain-Polarity jumper with multiplication factor of G2 and G30 are standard. (Total Gain range from 2 to 600)</li>
+<li>Common mode suppression: &gt;50 dB</li>
+</ul>
+<p>When using unipolar jumpers for MSCF-16 with 34 pin input header connectors, the &quot;-&quot; lines are grounded. MHL-32 or MAD-34 adaptors can be used to interface to Lemo.</p>
+<h3 id="noise">Noise</h3>
+<p>Input noise at gain = 100 and 2 us shaping time = 7 uVrms.</p>
+<h3 id="shaper">Shaper</h3>
+<ul>
+<li>PZ adjustable with front panel trimmer</li>
+<li>5 th order filter CR-RC5</li>
+<li>Four shaping times selectable for groups of 4 channels</li>
+<li>Output amplitude: 0 to 10 V at 1 k&#x3A9;</li>
+<li>Active baseline restorer</li>
+<li>DC-Offset: VDC &#x2190; 5 mV, common offset adjust</li>
+<li>Output connector: 34 pin male connector</li>
+<li>Integral non linearity &lt;0.05 %</li>
+<li>gain drift &lt;0.0075 % /&#xB0;C</li>
+<li>Offset drift &lt;50 uV /&#xB0;C</li>
+</ul>
+<h3 id="timing-filter-amplifier">Timing filter amplifier</h3>
+<ul>
+<li>Four selectable integration times.</li>
+<li>Differentiation times are selected with shaping time (See Table).</li>
+</ul>
+<h3 id="discriminator">Discriminator</h3>
+<ul>
+<li>CFD or Leading edge (jumper selectable)</li>
+<li>CFD delays, and fraction selectable for group of 4 channels</li>
+<li>CFD &#x2013; Walk: for 30 ns (10 % to 90 %) input rise time, &#xB1;1 ns (dynamic range 100:1)</li>
+<li>Threshold: adjustable, 0 % to 30 % of maximum range, in 256 steps</li>
+<li>CFD fractions: selectable for groups of 4: 20 % or 40 %</li>
+<li>CFD &#x2013; Walk: for 30 ns (10 % to 90 %) input rise time, max 1 ns (dynamic range 100:1)</li>
+</ul>
+<p><img src="../../img/MSCF16FFractionAndDelay.png" alt="Fraction And Delay"></p>
+<h3 id="timing-delay-ecl-output">Timing delay, ECL output</h3>
+<ul>
+<li>Pulse width for NIM trigger output: 450 ns</li>
+<li>Timing stop ECL-Signals: delay see table, can be switched off. Pulse width 200 ns</li>
+<li>Output connector: 34 pin male connector</li>
+</ul>
+<h3 id="multiplicity-trigger">Multiplicity trigger</h3>
+<ul>
+<li>Each channel above threshold contributes to multiplicity level, a multiplicity trigger is generated for: lower multiplicity threshold &lt;= multiplicity ; level &lt;= upper multiplicity threshold</li>
+<li>Coincidence interval adjustable via RC from 20 ns up to 200 ns (default 120 ns = Value 128).</li>
+<li>The multiplicity trigger is delayed by the coincidence time to the trigger signal.</li>
+<li>Multiplicities selectable via remote control</li>
+<li>Lower multiplicity threshold: 1 ... 8 and inf</li>
+<li>Multiplicity chaining: multiplicity outputs from several modules can be connected, resulting in a total multiplicity level of all connected modules. Multiplicity trigger windows of the connected modules act independently on the total multiplicity.</li>
+</ul>
+<hr>
+<h2 id="mscf-16-front-panel-operation">MSCF-16 Front panel Operation</h2>
+<p>Most MSCF-16 parameters can be set and controlled via front panel elements.</p>
+<p>Two parameters can be adjusted for each channel individually:  </p>
+<ul>
+<li>threshold</li>
+<li>PZ compensation</li>
+</ul>
+<p>Two parameters can be adjusted in groups of four channels (channel 1&#x2013;4 , 5&#x2013;8 , 9&#x2013;12 and 13&#x2013;16 ):  </p>
+<ul>
+<li>Gain</li>
+<li>Shaping time</li>
+</ul>
+<p>Three parameters can be set only for all channels by switches on the motherboard:</p>
+<ul>
+<li>Baseline restorer (BLK) on / off</li>
+<li>Timing (ECL) delay on / off</li>
+<li>TF integration: four times (see table)</li>
+</ul>
+<p>All parameters can as well be set up for all channels in common. Thus there are two different modes of front panel operation:  </p>
+<ul>
+<li>Common mode: Threshold, PZ, Gain and Shaping time have a common setting for all channels</li>
+<li>Single mode: Threshold and PZ settings for each individual channel ; Gain and Shaping time for each groups of four channels</li>
+</ul>
+<p>Common parameters can be copied to individual parameters to easily get a basis for individual settings. this is done by clicking the &#x201C;Single chan&#x201D; knob while &#x201C;enter&#x201D; is pressed</p>
+<h3 id="mode-select">Mode select</h3>
+<p>Clicking the &#x201C;single chan&#x201D; knob switches between single and common operating mode. The orange LED associated with the &#x201C;single chan&#x201D; knob signals single channel mode when lighted.</p>
+<h3 id="monitor--active-channel">Monitor / Active Channel</h3>
+<p>One out of 16 available channels is available at the energy and timing monitor outputs. This is also the channel to be modified in Single mode.</p>
+<h3 id="shaping-time">Shaping time</h3>
+<p>Shaping times are changed around by clicking the &#x201C;Sht&#x201D; knob, the shaping time value of the currently selected channel (group) is displayed by two LEDs. They indicate an index from 0 (&#x201C;1&#x201D; and &#x201C;2&#x201D; LEDs both off) up to 3 (both LEDs on). Please refer to individual device labelling for corresponding shaping times.</p>
+<h3 id="gain">Gain</h3>
+<p>Gain values are set by the gain dial, gain values are indicated on the front panel. Gain ranges from 1.0 to 20.0. It can be set commonly for all channels or individual for groups of four channels.</p>
+<h3 id="threshold">Threshold</h3>
+<p>Threshold is adjusted with a front panel trimmer, the corresponding voltage can be drawn from the test output. It can be set commonly for all channels or individually for each channel.</p>
+<h3 id="pz">PZ</h3>
+<p>PZ compensation is also adjusted with a front panel trimmer, the corresponding voltage level is output on the test point. It can be set commonly for all channels or individually for each channel.</p>
+<hr>
+<h2 id="general-setup">General setup</h2>
+<h3 id="common-mode">Common mode</h3>
+<p>In common mode, the trimmer settings for threshold and PZ are followed immediately.<br>Shaping time can be selected for all channels clicking the &quot;Sht&quot; knob. Gain is set for all channels by selecting the desired gain switch position.</p>
+<h3 id="individual-mode">Individual mode</h3>
+<p>In individual channel mode, trimmer changes are only read and activated when the &#x201C;enter&#x201D; knob is pressed during changes. Threshold and PZ settings are remembered individually for each channel.<br>Shaping times and gains are valid for a group of four channels.</p>
+<h3 id="copying-from-common-to-individual">Copying from Common to Individual</h3>
+<p>For an easy basic setup, common settings can be copied to the individual section. Fine tuning can then be done based on this basic setup.<br>Copy is done by clicking the &#x201C;Single chan&#x201D; knob while &#x201C;enter&#x201D; is pressed.</p>
+<h3 id="auto-pz-setup">Auto PZ setup</h3>
+<p>The PZ compensation values can be set up automatically &#x2013; provided there&#x2019;s a signal at the respective channels.<br>Holding the &#x201C;Single chan&#x201D; knob for about two seconds starts the automatic pz setup. The values found are saved in the individual parameter set.<br>Clicking &#x201C;Single chan&#x201D; again during autopz breaks the process.</p>
+<h2 id="remote-controlled-operation">Remote Controlled Operation</h2>
+<p>MSCF-16 can be remotely controlled in two ways: USB control and mesytec control bus.</p>
+<p>MSCF-16 has two complete parameter sets, one for front panel operation, one for remote control.<br>Switching RC on and off switches between these two parameter sets.</p>
+<p>In RC mode there are several more parameters, which will also be used (but can not be controlled) in front panel mode:  </p>
+<ul>
+<li>Coincidence time window</li>
+<li>BLR threshold</li>
+<li>Multiplicity trigger thresholds</li>
+</ul>
+<p>Only for factory setting or experts:  </p>
+<ul>
+<li>Shaper offset</li>
+<li>discriminator threshold offset</li>
+</ul>
+<hr>
+<p><img src="../../img/MSCF16FPCB.png" alt="MSCF-16 PCB overview"></p>
+<ul>
+<li>1: Position for the active gain-polarity jumpers.</li>
+<li>2: Position to store up to 4 spare jumpers</li>
+<li>3: BLR on/off, ECL Trigger delay on/off</li>
+<li>4: Timing filter integration time</li>
+<li>5: 50 Ohm jumper. Is needed if modules are not connected for common multiplicity.</li>
+<li>6-9: Connector usually occupied by CFD modules. To use only leading edge discriminators, remove CFD module and insert 16 jumpers at the upper positions, 4 for each connector. The lower pair on each connector is ground and can be left free.</li>
+</ul>
 <!-- MSCF16_F.md ends here -->
-
-
 
                                 
                                 </section>
@@ -1375,7 +1392,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"MESYTEC/MSCF16-F+","level":"1.3.42","depth":2,"next":{"title":"ORTEC/414A+","level":"1.3.43","depth":2,"path":"ElectronicsModules/ORTEC/414A.md","ref":"ElectronicsModules/ORTEC/414A.md","articles":[]},"previous":{"title":"MESYTEC/MRC-1+","level":"1.3.41","depth":2,"path":"ElectronicsModules/MESYTEC/MRC_1.md","ref":"ElectronicsModules/MESYTEC/MRC_1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ElectronicsModules/MESYTEC/MSCF16_F.md","mtime":"2017-06-02T10:18:18.779Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2017-06-02T10:22:38.036Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"MESYTEC/MSCF16-F+","level":"1.3.42","depth":2,"next":{"title":"ORTEC/414A+","level":"1.3.43","depth":2,"path":"ElectronicsModules/ORTEC/414A.md","ref":"ElectronicsModules/ORTEC/414A.md","articles":[]},"previous":{"title":"MESYTEC/MRC-1+","level":"1.3.41","depth":2,"path":"ElectronicsModules/MESYTEC/MRC_1.md","ref":"ElectronicsModules/MESYTEC/MRC_1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ElectronicsModules/MESYTEC/MSCF16_F.md","mtime":"2017-06-02T10:18:18.779Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-28T14:57:53.090Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

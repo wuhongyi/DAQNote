@@ -2,12 +2,12 @@
 <!DOCTYPE HTML>
 <html lang="" >
     <head>
-        <title>CAEN/N625* · GitBook</title>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>CAEN/N625* · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.0">
+        <meta name="generator" content="GitBook 3.2.2">
         
         
         
@@ -1183,90 +1183,96 @@
 ;;           By: Hongyi Wu(吴鸿毅)
 ;;     Update #: 4
 ;; URL: http://wuhongyi.cn -->
-
-
-<h1 id="caen-n625-quad-linear-fan-infan-out">CAEN N625 Quad Linear Fan In/Fan Out</h1><p>&#x8BF4;&#x660E;&#x4E66; <a href="http://wuhongyi.cn/DAQNote/pdf/ElectronicsModules/CAEN/n625_rev3.pdf" target="_blank">N625</a></p><p><img alt="Front And BackPanel" src="../../img/N625FrontAndBackPanel.png">
-<img alt="Jumpers Setting" src="../../img/N625JumpersSetting.png"></p><p>The Mod. N625 is a 1-unit NIM module which houses:</p><ul><li>Four linear 4 Input + 4 Output Fan in/Fan out sections
-</li>
-<li>One 1 Channel Discriminator
-</li></ul>
+<h1 id="caen-n625-quad-linear-fan-infan-out">CAEN N625 Quad Linear Fan In/Fan Out</h1>
+<p>&#x8BF4;&#x660E;&#x4E66; <a href="http://wuhongyi.cn/DAQNote/pdf/ElectronicsModules/CAEN/n625_rev3.pdf" target="_blank">N625</a></p>
+<p><img src="../../img/N625FrontAndBackPanel.png" alt="Front And BackPanel">
+<img src="../../img/N625JumpersSetting.png" alt="Jumpers Setting"></p>
+<p>The Mod. N625 is a 1-unit NIM module which houses:  </p>
+<ul>
+<li>Four linear 4 Input + 4 Output Fan in/Fan out sections</li>
+<li>One 1 Channel Discriminator</li>
+</ul>
 <p>Each Fan in/Fan out section produces on all its output connectors, the sum of the signals fed to the inputs, multiplied for the selected gain factor (1 or -1, jumper selectable).
-Gain = 1 (non inverting mode) and gain = -1 (inverting mode) are signalled by LEDs.</p><p>Fan in/Fan out inputs are bipolar, both input and output signals are DC coupled.</p><p>Moreover each Fan in/Fan out section features a screwdriver trimmer which allows the DC offset (&#x201C;zero&#x201D;) adjustment.</p><p><strong>The discriminator channel has one DC coupled input, an internal jumper allows to perform the slope coupling on either the leading or the trailing edge; the threshold is screwdriver adjustable and monitorable via test point; the output is NIM standard, its width is screwdriver adjustable as well.</strong></p><p>The discriminator In/Out connectors are placed on the back panel, while its controls are on the front panel.</p><h2 id="fan-infan-out-sections">Fan in/Fan out sections</h2><ul><li><p>INPUT CONNECTORS</p><ul><li>Mechanical specifications: Front panel LEMO 00 type connectors
+Gain = 1 (non inverting mode) and gain = -1 (inverting mode) are signalled by LEDs.</p>
+<p>Fan in/Fan out inputs are bipolar, both input and output signals are DC coupled.</p>
+<p>Moreover each Fan in/Fan out section features a screwdriver trimmer which allows the DC offset (&#x201C;zero&#x201D;) adjustment.</p>
+<p><strong>The discriminator channel has one DC coupled input, an internal jumper allows to perform the slope coupling on either the leading or the trailing edge; the threshold is screwdriver adjustable and monitorable via test point; the output is NIM standard, its width is screwdriver adjustable as well.</strong></p>
+<p>The discriminator In/Out connectors are placed on the back panel, while its controls are on the front panel.</p>
+<h2 id="fan-infan-out-sections">Fan in/Fan out sections</h2>
+<ul>
+<li>INPUT CONNECTORS<ul>
+<li>Mechanical specifications: Front panel LEMO 00 type connectors</li>
+<li>Electrical specifications: Bipolar, DC coupled, 50 &#x3A9; impedance</li>
+</ul>
 </li>
-<li>Electrical specifications: Bipolar, DC coupled, 50 &#x3A9; impedance
-</li></ul>
+<li>OUTPUT CONNECTORS<ul>
+<li>Mechanical specifications: Front panel LEMO 00 type connectors</li>
+<li>Electrical specifications: DC coupled, provided across 50 &#x3A9; loads</li>
+</ul>
 </li>
-<li><p>OUTPUT CONNECTORS</p><ul><li>Mechanical specifications: Front panel LEMO 00 type connectors
+<li>ZERO TRIMMER<ul>
+<li>Mechanical specifications: Front panel screwdriver trimmer</li>
+<li>Function: Allows to adjust the output DC offset within a &#xB1;100 mV range</li>
+</ul>
 </li>
-<li>Electrical specifications: DC coupled, provided across 50 &#x3A9; loads
-</li></ul>
+<li>DISPLAYS<ul>
+<li>Gain LEDs: 2 Front panel LEDs per section: green: Gain=-1; yellow: Gain=+1.</li>
+</ul>
 </li>
-<li><p>ZERO TRIMMER</p><ul><li>Mechanical specifications: Front panel screwdriver trimmer
+<li>INTERNAL JUMPERS<ul>
+<li>Gain jumper: allows to set gain either at +1 or at -1</li>
+</ul>
 </li>
-<li>Function: Allows to adjust the output DC offset within a &#xB1;100 mV range
-</li></ul>
+</ul>
+<ul>
+<li>Max. input amplitude &#xB1;1.6 V</li>
+<li>DC offset (Zero) adjustment &#xB1;100 mV</li>
+<li>Input reflection &lt;4%</li>
+<li>Integral non-linearity &lt; 1%</li>
+<li>Input/output delay 4 &#xB1; 1 ns</li>
+</ul>
+<h2 id="discriminator">Discriminator</h2>
+<ul>
+<li>INPUT CONNECTOR<ul>
+<li>Mechanical specifications: Back panel LEMO 00 type connector</li>
+<li>Electrical specifications: Bipolar, DC coupled, 50 &#x3A9; impedance</li>
+</ul>
 </li>
-<li><p>DISPLAYS</p><ul><li>Gain LEDs: 2 Front panel LEDs per section: green: Gain=-1; yellow: Gain=+1.
-</li></ul>
+<li>OUTPUT CONNECTOR<ul>
+<li>Mechanical specifications: Back panel LEMO 00 type connector</li>
+<li>Electrical specifications: Std. NIM level, provided across a 50 &#x3A9; load</li>
+</ul>
 </li>
-<li><p>INTERNAL JUMPERS</p><ul><li>Gain jumper: allows to set gain either at +1 or at -1
-</li></ul>
-</li></ul>
-<ul><li>Max. input amplitude &#xB1;1.6 V
+<li>WIDTH TRIMMER<ul>
+<li>Mechanical specifications: Front panel screwdriver trimmer</li>
+<li>Function: Allows to adjust the output pulse width in the 5&#xF7;70 ns/15&#xF7;600 ns ranges, jumper selectable</li>
+</ul>
 </li>
-<li>DC offset (Zero) adjustment &#xB1;100 mV
+<li>THRESHOLD TRIMMER<ul>
+<li>Mechanical specifications: Front panel screwdriver trimmer</li>
+<li>Function: Allows to adjust the discriminator threshold in the -1200&#xF7;+1200 mV range; one test&#x2013;point allows to monitor the threshold value</li>
+</ul>
 </li>
-<li>Input reflection &lt;4%
+<li>DISPLAYS<ul>
+<li>Trigger slope LEDs: 2 Front panel LEDs; the relevant LED lights up according to the trigger</li>
+<li>slope setting: green: Trailing edge; yellow: Leading edge</li>
+</ul>
 </li>
-<li>Integral non-linearity &lt; 1%
+<li>INTERNAL JUMPERS<ul>
+<li>Trigger slope jumper: allows to set the trigger slope either to leading or to trailing edge</li>
+<li>Width range jumper: allows to select the output width range between 5&#xF7;70 ns and 15&#xF7;600 ns</li>
+</ul>
 </li>
-<li>Input/output delay 4 &#xB1; 1 ns
-</li></ul>
-<h2 id="discriminator">Discriminator</h2><ul><li><p>INPUT CONNECTOR</p><ul><li>Mechanical specifications: Back panel LEMO 00 type connector
-</li>
-<li>Electrical specifications: Bipolar, DC coupled, 50 &#x3A9; impedance
-</li></ul>
-</li>
-<li><p>OUTPUT CONNECTOR</p><ul><li>Mechanical specifications: Back panel LEMO 00 type connector
-</li>
-<li>Electrical specifications: Std. NIM level, provided across a 50 &#x3A9; load
-</li></ul>
-</li>
-<li><p>WIDTH TRIMMER</p><ul><li>Mechanical specifications: Front panel screwdriver trimmer
-</li>
-<li>Function: Allows to adjust the output pulse width in the 5&#xF7;70 ns/15&#xF7;600 ns ranges, jumper selectable
-</li></ul>
-</li>
-<li><p>THRESHOLD TRIMMER</p><ul><li>Mechanical specifications: Front panel screwdriver trimmer
-</li>
-<li>Function: Allows to adjust the discriminator threshold in the -1200&#xF7;+1200 mV range; one test&#x2013;point allows to monitor the threshold value
-</li></ul>
-</li>
-<li><p>DISPLAYS</p><ul><li>Trigger slope LEDs: 2 Front panel LEDs; the relevant LED lights up according to the trigger
-</li>
-<li>slope setting: green: Trailing edge; yellow: Leading edge
-</li></ul>
-</li>
-<li><p>INTERNAL JUMPERS</p><ul><li>Trigger slope jumper: allows to set the trigger slope either to leading or to trailing edge
-</li>
-<li>Width range jumper: allows to select the output width range between 5&#xF7;70 ns and 15&#xF7;600 ns
-</li></ul>
-</li></ul>
-<ul><li>Max. input voltage  &#xB1; 5V
-</li>
-<li>Min. detectable signal &#xB1; 10 mV
-</li>
-<li>Max. input frequency 90 MHz
-</li>
-<li>Double pulse resolution 11 ns
-</li>
-<li>Input/output delay 11 ns
-</li>
-<li>Output rise/fall time 1 ns
-</li></ul>
+</ul>
+<ul>
+<li>Max. input voltage  &#xB1; 5V</li>
+<li>Min. detectable signal &#xB1; 10 mV</li>
+<li>Max. input frequency 90 MHz</li>
+<li>Double pulse resolution 11 ns</li>
+<li>Input/output delay 11 ns</li>
+<li>Output rise/fall time 1 ns</li>
+</ul>
 <!-- N625.md ends here -->
-
-
 
                                 
                                 </section>
@@ -1310,7 +1316,7 @@ Gain = 1 (non inverting mode) and gain = -1 (inverting mode) are signalled by LE
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"CAEN/N625*","level":"1.3.20","depth":2,"next":{"title":"CAEN/N81A+","level":"1.3.21","depth":2,"path":"ElectronicsModules/CAEN/N81A.md","ref":"ElectronicsModules/CAEN/N81A.md","articles":[]},"previous":{"title":"CAEN/N570+","level":"1.3.19","depth":2,"path":"ElectronicsModules/CAEN/N570.md","ref":"ElectronicsModules/CAEN/N570.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ElectronicsModules/CAEN/N625.md","mtime":"2017-06-02T10:16:49.495Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2017-06-02T10:22:38.036Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"CAEN/N625*","level":"1.3.20","depth":2,"next":{"title":"CAEN/N81A+","level":"1.3.21","depth":2,"path":"ElectronicsModules/CAEN/N81A.md","ref":"ElectronicsModules/CAEN/N81A.md","articles":[]},"previous":{"title":"CAEN/N570+","level":"1.3.19","depth":2,"path":"ElectronicsModules/CAEN/N570.md","ref":"ElectronicsModules/CAEN/N570.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ElectronicsModules/CAEN/N625.md","mtime":"2017-06-02T10:16:49.495Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-28T14:57:53.090Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

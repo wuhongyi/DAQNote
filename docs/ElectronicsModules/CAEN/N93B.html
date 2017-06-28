@@ -2,12 +2,12 @@
 <!DOCTYPE HTML>
 <html lang="" >
     <head>
-        <title>CAEN/N93B* · GitBook</title>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>CAEN/N93B* · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.0">
+        <meta name="generator" content="GitBook 3.2.2">
         
         
         
@@ -1183,65 +1183,71 @@
 ;;           By: Hongyi Wu(吴鸿毅)
 ;;     Update #: 4
 ;; URL: http://wuhongyi.cn -->
-
-
-<h1 id="caen-n93b">CAEN N93B</h1><p>&#x8BF4;&#x660E;&#x4E66; <a href="http://wuhongyi.cn/DAQNote/pdf/ElectronicsModules/CAEN/n93b.pdf" target="_blank">N93B</a></p><p>DUAL TIMER - mod 2255B</p><p>&#x8BE5;&#x63D2;&#x4EF6;&#x7531;<strong>&#x4E24;&#x7EC4;</strong>&#x5B8C;&#x5168;&#x76F8;&#x540C;&#x7684;&#x89E6;&#x53D1;&#x8109;&#x51B2;&#x4EA7;&#x751F;&#x5668;&#x7EC4;&#x6210;&#x3002;&#x53EF;&#x7528;&#x6765;&#x8C03;&#x8282; NIM &#x53CA; ECL &#x4FE1;&#x53F7;&#x7684;&#x5BBD;&#x5EA6;&#x4ECE; 50 ns &#x5230; 10 s&#x3002;</p><p>The END-MARKER, a short output pulse at the end of the tiiming cycle, can be uesd for delayed triggering of other units or, if fed back into the START input, it provides a self-running rate generator that can be started and stopped at will.</p><p>It is possible to disable start inputs by feeding a NIM signal to the &quot;Veto&quot; input.</p><h2 id="&#x8F93;&#x5165;">&#x8F93;&#x5165;</h2><ul><li><p>START INPUT</p><ul><li>NIM and ECL,leading edge sensitive.
+<h1 id="caen-n93b">CAEN N93B</h1>
+<p>&#x8BF4;&#x660E;&#x4E66; <a href="http://wuhongyi.cn/DAQNote/pdf/ElectronicsModules/CAEN/n93b.pdf" target="_blank">N93B</a></p>
+<p>DUAL TIMER - mod 2255B</p>
+<p>&#x8BE5;&#x63D2;&#x4EF6;&#x7531;<strong>&#x4E24;&#x7EC4;</strong>&#x5B8C;&#x5168;&#x76F8;&#x540C;&#x7684;&#x89E6;&#x53D1;&#x8109;&#x51B2;&#x4EA7;&#x751F;&#x5668;&#x7EC4;&#x6210;&#x3002;&#x53EF;&#x7528;&#x6765;&#x8C03;&#x8282; NIM &#x53CA; ECL &#x4FE1;&#x53F7;&#x7684;&#x5BBD;&#x5EA6;&#x4ECE; 50 ns &#x5230; 10 s&#x3002; </p>
+<p>The END-MARKER, a short output pulse at the end of the tiiming cycle, can be uesd for delayed triggering of other units or, if fed back into the START input, it provides a self-running rate generator that can be started and stopped at will.</p>
+<p>It is possible to disable start inputs by feeding a NIM signal to the &quot;Veto&quot; input.</p>
+<h2 id="&#x8F93;&#x5165;">&#x8F93;&#x5165;</h2>
+<ul>
+<li>START INPUT<ul>
+<li>NIM and ECL,leading edge sensitive.</li>
+<li>Minimum width 5 ns.</li>
+<li>Momentary switch for single cycle operation.</li>
+</ul>
 </li>
-<li>Minimum width 5 ns.
+<li>VETO INPUT<ul>
+<li>NIM input</li>
+<li>NUM ture level at VETO input desables the START input (within +-2ns of START leading edge)</li>
+</ul>
 </li>
-<li>Momentary switch for single cycle operation.
-</li></ul>
+<li>RESET INPUT<ul>
+<li>NIM input</li>
+<li>Minimum width: 7 ns (15 ns for recursive operation)</li>
+<li>It can be applied at any point of the time cycle.</li>
+<li>Produces END-MARKER</li>
+</ul>
 </li>
-<li><p>VETO INPUT</p><ul><li>NIM input
+</ul>
+<h2 id="&#x8F93;&#x51FA;">&#x8F93;&#x51FA;</h2>
+<ul>
+<li>OUTPUTS<ul>
+<li>Two normal independent,one complementary NIM output and one ECL.</li>
+</ul>
 </li>
-<li>NUM ture level at VETO input desables the START input (within +-2ns of START leading edge)
-</li></ul>
+<li>WIDTH<ul>
+<li>50 ns to 10 s in 9 decade steps, with a potentiometer and locking dial for fine adjustment</li>
+<li>Accuracy +-10% of full scale, with adequate range overlap.</li>
+<li>Temperature coefficient: 10^{-3}/^{0}C of setting</li>
+<li>Switch postion &lt;&lt;&#x65E0;&#x7A77;&gt;&gt; for bistable opreation</li>
+</ul>
 </li>
-<li><p>RESET INPUT</p><ul><li>NIM input
+<li>DEAD TIME<ul>
+<li>Shorter than the cycle time</li>
+<li>The timer can be triggered well before the ehd of the timing cucle.</li>
+</ul>
 </li>
-<li>Minimum width: 7 ns (15 ns for recursive operation)
+<li>RISE/FALL TIME<ul>
+<li>&lt;= 2 ns</li>
+</ul>
 </li>
-<li>It can be applied at any point of the time cycle.
+<li>INPUT-OUTPUT DELAY<ul>
+<li>Delay from Start to leading edge of output,or from Reset to trailing edge,is ~13 ns</li>
+</ul>
 </li>
-<li>Produces END-MARKER
-</li></ul>
-</li></ul>
-<h2 id="&#x8F93;&#x51FA;">&#x8F93;&#x51FA;</h2><ul><li><p>OUTPUTS</p><ul><li>Two normal independent,one complementary NIM output and one ECL.
-</li></ul>
+<li>END MARKER<ul>
+<li>NIM and ECL output, 15 ns wide output pulse leading edge is coincident with the trailing edge of output within 2 ns.</li>
+<li>Can be connected to Start input for free running opreation (sequence activated by the START switch)</li>
+</ul>
 </li>
-<li><p>WIDTH</p><ul><li>50 ns to 10 s in 9 decade steps, with a potentiometer and locking dial for fine adjustment
+<li>LED<ul>
+<li>Flashes for 0.1 s or output width, whichever is longer.</li>
+<li>At high rates the lamp has its own flashing rate.</li>
+</ul>
 </li>
-<li>Accuracy +-10% of full scale, with adequate range overlap.
-</li>
-<li>Temperature coefficient: 10^{-3}/^{0}C of setting
-</li>
-<li>Switch postion &lt;&lt;&#x65E0;&#x7A77;&gt;&gt; for bistable opreation
-</li></ul>
-</li>
-<li><p>DEAD TIME</p><ul><li>Shorter than the cycle time
-</li>
-<li>The timer can be triggered well before the ehd of the timing cucle.
-</li></ul>
-</li>
-<li><p>RISE/FALL TIME</p><ul><li>&lt;= 2 ns
-</li></ul>
-</li>
-<li><p>INPUT-OUTPUT DELAY</p><ul><li>Delay from Start to leading edge of output,or from Reset to trailing edge,is ~13 ns
-</li></ul>
-</li>
-<li><p>END MARKER</p><ul><li>NIM and ECL output, 15 ns wide output pulse leading edge is coincident with the trailing edge of output within 2 ns.
-</li>
-<li>Can be connected to Start input for free running opreation (sequence activated by the START switch)
-</li></ul>
-</li>
-<li><p>LED</p><ul><li>Flashes for 0.1 s or output width, whichever is longer.
-</li>
-<li>At high rates the lamp has its own flashing rate.
-</li></ul>
-</li></ul>
+</ul>
 <!-- N93B.md ends here -->
-
-
 
                                 
                                 </section>
@@ -1285,7 +1291,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"CAEN/N93B*","level":"1.3.23","depth":2,"next":{"title":"CAEN/N96*","level":"1.3.24","depth":2,"path":"ElectronicsModules/CAEN/N96.md","ref":"ElectronicsModules/CAEN/N96.md","articles":[]},"previous":{"title":"CAEN/N843+","level":"1.3.22","depth":2,"path":"ElectronicsModules/CAEN/N843.md","ref":"ElectronicsModules/CAEN/N843.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ElectronicsModules/CAEN/N93B.md","mtime":"2017-06-02T10:15:29.249Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2017-06-02T10:22:38.036Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"CAEN/N93B*","level":"1.3.23","depth":2,"next":{"title":"CAEN/N96*","level":"1.3.24","depth":2,"path":"ElectronicsModules/CAEN/N96.md","ref":"ElectronicsModules/CAEN/N96.md","articles":[]},"previous":{"title":"CAEN/N843+","level":"1.3.22","depth":2,"path":"ElectronicsModules/CAEN/N843.md","ref":"ElectronicsModules/CAEN/N843.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ElectronicsModules/CAEN/N93B.md","mtime":"2017-06-02T10:15:29.249Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-28T14:57:53.090Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
