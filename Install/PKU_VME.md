@@ -4,9 +4,9 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 三 9月 21 09:23:05 2016 (+0800)
-;; Last-Updated: 三 5月 24 23:21:57 2017 (+0800)
+;; Last-Updated: 三 6月 28 16:24:00 2017 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 20
+;;     Update #: 21
 ;; URL: http://wuhongyi.cn -->
 
 # PKU VME 获取
@@ -161,6 +161,9 @@ chkridf -s 0
 
 
 总trigger进 N93B（N93B调节到无穷档）或者 794（调节到无穷档） 插件，输出需要分成多路，其中给V830、V785、MADC32的需要把这个门展宽，给V1190的需要延迟之后再输入。该部分可通过CO4020来实现。（V830、V785串联即可，V1190自己串联即可，MADC32需要每个单独从第一个孔输入）
+
+Trigger进CO4020一个模块，输出（200ns宽度）进N93B/794，然后N93B/794输出GATE进入CO4020一个模块，将其展宽为门宽度，然后将输出进入FIN-IN/FIN-OUT；输出进入CO4020另一个模块，宽度为时间延迟宽度，输出进入CO4020另一个模块，选择上升沿触发，输出给GDC。
+
 
 V2718 LEMO 口4接到 N93B 或者 794 的 RESET 孔上，这样获取在完成一个event的采集之后给N93B发送重置信号。
 
