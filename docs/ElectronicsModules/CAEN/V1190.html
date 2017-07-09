@@ -1179,12 +1179,53 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 四 6月  1 09:43:16 2017 (+0800)
-;; Last-Updated: 五 6月  2 18:17:34 2017 (+0800)
+;; Last-Updated: 四 6月 29 12:58:20 2017 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 3
+;;     Update #: 4
 ;; URL: http://wuhongyi.cn -->
 <h1 id="caen-v1190">CAEN V1190</h1>
 <p>&#x8BF4;&#x660E;&#x4E66; <a href="http://wuhongyi.cn/DAQNote/pdf/ElectronicsModules/CAEN/V1190_REV13.pdf" target="_blank">V1190</a>   <a href="http://wuhongyi.cn/DAQNote/pdf/ElectronicsModules/CAEN/v1x90_demo_rev1.pdf" target="_blank">V1x90Demo</a></p>
+<hr>
+<p>Resolution can be set at 100 ps (19 bit dynamics, 52 &#x3BC;s FSR), 200 ps (19 bit dynamics, 104 &#x3BC;s FSR) or 800 ps (17 bit dynamics, 104 &#x3BC;s FSR).</p>
+<p>The data acquisition can be programmed in &quot;EVENTS&quot; (&#x201C;TRIGGER MATCHING MODE&#x201D; with a programmable time window: the so called match window) or in &quot;CONTINUOUS STORAGE MODE&quot;.</p>
+<p><em>The module accepts both ECL and LVDS inputs on the TDC inputs.</em></p>
+<p>The unit accepts the following CONTROL signals (ECL differential, 110 &#x6B27;) in common to all channels:  </p>
+<ul>
+<li>TRG: a common TRIGGER input;</li>
+<li>CRST: allows the TDCs&#x2019; Bunch Count Reset;</li>
+<li>CLK: allows to provide an external Clock to the board;</li>
+<li>CLR: erases data from the Output Buffer and performs TDCs global reset;</li>
+<li>L2A/L2R: Level 2 Accept/Reject (2 nd level trigger, not yet implemented);</li>
+<li>AUX: auxiliary input (not yet implemented).</li>
+</ul>
+<p>The TRIGGER can be also sent as NIM signal on a double (bridged) LEMO00 connector.<br>An ECL output, OUT_PROG, whose function can be programmed, is also available on the CONTROL Bus.<br>Six front panel LEDs show the status of the unit:</p>
+<ul>
+<li>DTACK lights up each time the module generates the VME signal DTACK;</li>
+<li>PWR lights up when the module is correctly supplied</li>
+<li>TERM ON lights up when all the lines of the CONTROL bus are terminated;</li>
+<li>FULL lights up when the memory is full;</li>
+<li>ERROR lights up when a global error in the TDCs occurs;</li>
+<li>DATA READY lights up when the Event/Data Ready condition occurs.</li>
+</ul>
+<p>A hit measurement is performed by storing the state of the DLL (fine/vernier counter) and the coarse counter in one hit register when a hit is detected. The TDC can be programmed to detect individual leading and/or trailing edges of the hit signal, or alternatively to perform a paired measurement consisting of one leading edge and the corresponding pulse width.</p>
+<hr>
+<h2 id="long-range-time-measurements">Long Range Time Measurements</h2>
+<p>The V1190 allows also to increase the Full Scale Range. Taking into account relative time measurements respect to a common reference, it is necessary to use one channel as a reference and make the time difference in the software.</p>
+<p><img src="../../img/V1190RelativeTimeMeasurement.png" alt="Relative Time measurement"></p>
+<p>Each channel has a counter that rolls over every 2 N clock cycles, where N is the number
+of bits (19 with 100 and 200 ps resolution, 17 with 800 ps) this determines the full scale
+range of the time measurement. If two hits A and B are separated by the time T&gt;FSR,
+when the relative time is calculated as the difference T A-B = T B - T A , the returned result is
+actually ($T<em>{B}$ - $T</em>{A}$ ) mod FSR, thus making an error of x*FSR, where x is unknown. The
+<em>Extended Trigger Time Tag</em>(ETTT) aims at the knowledge of x.</p>
+<p>It is important to note that it is necessary to work in Trigger Matching Mode, although
+we usually don&#x2019;t need a real trigger matching in such a long scale time measurements.
+The trigger is here used in order to open a sequence of consecutive trigger windows and
+let the TDC to record all the hits in a continuous way. To do that, the trigger
+will be a repetitive signal of period $T_{t}$ and the window width is programmed to be slightly
+wider than T t . Normally we set T t a bit less than ($2^{12}$ &#x2013; 1)*25ns that is the maximum
+window width. The window offset is meaningless but in order to respect the constraints, it
+is suggested to set it equal to &#x2013;WIDTH.</p>
 <!-- V1190.md ends here -->
 
                                 
@@ -1229,7 +1270,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"CAEN/V1190+","level":"1.3.25","depth":2,"next":{"title":"CAEN/V259+","level":"1.3.26","depth":2,"path":"ElectronicsModules/CAEN/V259.md","ref":"ElectronicsModules/CAEN/V259.md","articles":[]},"previous":{"title":"CAEN/N96*","level":"1.3.24","depth":2,"path":"ElectronicsModules/CAEN/N96.md","ref":"ElectronicsModules/CAEN/N96.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ElectronicsModules/CAEN/V1190.md","mtime":"2017-06-02T10:17:34.638Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-28T14:57:53.090Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"CAEN/V1190+","level":"1.3.25","depth":2,"next":{"title":"CAEN/V259+","level":"1.3.26","depth":2,"path":"ElectronicsModules/CAEN/V259.md","ref":"ElectronicsModules/CAEN/V259.md","articles":[]},"previous":{"title":"CAEN/N96*","level":"1.3.24","depth":2,"path":"ElectronicsModules/CAEN/N96.md","ref":"ElectronicsModules/CAEN/N96.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ElectronicsModules/CAEN/V1190.md","mtime":"2017-06-29T04:58:20.421Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-09T08:12:59.944Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

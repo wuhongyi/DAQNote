@@ -4,14 +4,14 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 六 2月 18 21:15:16 2017 (+0800)
-;; Last-Updated: 五 6月  2 18:18:00 2017 (+0800)
+;; Last-Updated: 日 7月  9 16:12:32 2017 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 4
+;;     Update #: 5
 ;; URL: http://wuhongyi.cn -->
 
 # MADC-32  Fast 32 channel VME Peak sensing ADC
 
-说明书 [MNV-3](http://wuhongyi.cn/DAQNote/pdf/ElectronicsModules/MESYTEC/MNV-3.pdf)
+说明书 [MNV-3](http://wuhongyi.cn/DAQNote/pdf/ElectronicsModules/MESYTEC/MADC-32.pdf)
 
 ## Features
 
