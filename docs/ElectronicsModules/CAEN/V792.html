@@ -1179,12 +1179,55 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 四 6月  1 09:44:46 2017 (+0800)
-;; Last-Updated: 三 6月 28 22:36:47 2017 (+0800)
+;; Last-Updated: 一 7月 10 15:12:20 2017 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 4
+;;     Update #: 6
 ;; URL: http://wuhongyi.cn -->
 <h1 id="caen-v792">CAEN V792</h1>
 <p>&#x8BF4;&#x660E;&#x4E66; <a href="http://wuhongyi.cn/DAQNote/pdf/ElectronicsModules/CAEN/v792_rev18.pdf" target="_blank">V792</a></p>
+<hr>
+<ul>
+<li>Inputs: 32/16 channels, 50 &#x3A9; impedance, negative polarity, DC coupling</li>
+<li>Input range: 0 &#xF7; 400 pC</li>
+<li>Resolution: 12 bit</li>
+<li>Gain: 100 fC/count </li>
+<li>Reflections: &lt;5% with 2 ns fall time input signals</li>
+<li>Noise<ul>
+<li>GateWidth(ns) Iped(count) Average(count) &#x3C3;(count)</li>
+<li>100           180         107.58         0.50</li>
+<li>500           180         326.44         0.54</li>
+<li>1000          180         597.32         0.56</li>
+<li>2000          180         1139.92        0.61 </li>
+</ul>
+</li>
+<li>Fast clear time: 600 ns</li>
+<li>Gate timing: The GATE signal must precede the analog input by &gt;15 ns </li>
+<li>Conversion time:  Mod. V792: 5.7 &#x3BC;s/32 Ch.; Mod. V792 N: 2.8 &#x3BC;s/16 Ch.</li>
+<li>Dead time:  Mod. V792: 6.9 &#x3BC;s/32 Ch.; Mod. V792 N: 4 &#x3BC;s/16 Ch. </li>
+</ul>
+<hr>
+<p>The Model V792 is a 1-unit wide VME 6U module housing 32 Charge-to-Digital Conversion channels with current integrating negative inputs (50 &#x3A9; impedance). For each channel, the input charge is converted to a voltage level by a QAC (Charge to Amplitude Conversion) section. Input range is 0 &#xF7; 400 pC. </p>
+<p>The boards are available both for standard and V430 VME crates; all versions support live insertion, allowing the User to insert (or remove) the board into (or from) the crate without switching it off.</p>
+<p>A 16 ch. decoupling board (Mod. A992) is available for the Mod. V792 to avoid ground loops and signal reflections when long flat cable (110 &#x3A9;) connections to the 50 &#x3A9; inputs are used (one 32 ch. V792 requires two A992 boards).</p>
+<p>The board has 32 (16 for the Mod. V792 N) input channels and one GATE input(ECL/NIM) common to all channels. The Mod. V792 N does not feature the ECL GATE input. </p>
+<p>The integrated currents, received from the channel inputs when the GATE input signal is active, are converted into voltage levels by the QAC sections and then multiplexed and converted by two fast 12-bit ADC modules. </p>
+<p>The Mod. V792 inputs can be tested with a voltage generator: in this case it is necessary to put a resitor (~1 kohm) in series to the generator; the integrated charge will be then
+$Q = [V<em>{GEN}/(1K+50)]*T</em>{GATE}$</p>
+<hr>
+<h2 id="pedestal">Pedestal</h2>
+<p>The QDC pedestal is the value readout when no input signal is present (open inputs). It is mainly due to the $I<em>{P}$ current integrated by the capacitor C when a GATE signal is applied. It is worth noting that the QDC pedestal does not depend linearly on GATE width. When the maximum dynamic range is needed, it is possible to program $I</em>{1}$ so that $I_{P}$ is close to zero. </p>
+<p>Table 2.1 shows that, below 55 DAC counts, the channel is &#x201C;decoupled&#x201D; and provides no output. </p>
+<p><img src="../../img/V792TableIpedValues.png" alt="Iped Values"></p>
+<p>Our advice is not to set the Iped Register below 60 counts in order to guarantee the channels to be &#x201C;coupled&#x201D;; anyway if the User wishes to have the channels &#x201C;coupled&#x201D; precisely with the minimum possible Iped, then it is necessary to set the Iped Register between 50 and 60 DAC counts and to increase the gate in order to check that the readout counts grows as the gate grows; if this does not happen, then Iped Register must be increased. </p>
+<p><img src="../../img/V792IpedVsIPEDRegisterSetting.png" alt="Iped (&#xB5;A) Vs IPED-Register setting"></p>
+<hr>
+<h2 id="maximum-gate-width">Maximum GATE width</h2>
+<p>The pedestal current value $I<em>{P}$ sets an upper limit on the maximum GATE width. The QDC pedestal value is $</em>{TGATE}* I<em>{P}$ ,where TGATE is the GATE width; usually, in order not to spoil the QDC dynamic range, this pedestal value should be 5-10% of the FSR. For example, if $I</em>{P}$ &#x223C;1 &#x3BC;A and at least 90% of the dynamic range is needed, the GATE width should not exceed &#x223C; 40 &#x3BC;s. </p>
+<hr>
+<h2 id="fast-clear">FAST CLEAR</h2>
+<p>The FAST CLEAR of the module can be performed via the relevant front panel signal. A FAST CLEAR signal, generated at any time within the FAST CLEAR window, i.e. between the leading edge of the GATE signal and the end of the programmable time value set in the Fast Clear Window Register, aborts the conversion. Its minimum width must be 30 ns.</p>
+<p>N.B.: since a FAST CLEAR operation implies a CLEAR CONVERSION cycle, a new GATE signal is accepted only if it occurs at least 600 ns after the leading-edge of the FAST CLEAR signal. </p>
+<hr>
 <p><img src="../../img/V792SignalConversionTiming.png" alt="Signal conversion timing"></p>
 <p><img src="../../img/V792AddressMapInCBLTMCSTOperation.png" alt="Address Map in CBLT/MCST operation"></p>
 <!-- V792.md ends here -->
@@ -1231,7 +1274,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"CAEN/V792+","level":"1.3.30","depth":2,"next":{"title":"CAEN/V830+","level":"1.3.31","depth":2,"path":"ElectronicsModules/CAEN/V830.md","ref":"ElectronicsModules/CAEN/V830.md","articles":[]},"previous":{"title":"CAEN/V785+","level":"1.3.29","depth":2,"path":"ElectronicsModules/CAEN/V785.md","ref":"ElectronicsModules/CAEN/V785.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ElectronicsModules/CAEN/V792.md","mtime":"2017-06-28T14:36:47.245Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-09T08:12:59.944Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"CAEN/V792+","level":"1.3.30","depth":2,"next":{"title":"CAEN/V830+","level":"1.3.31","depth":2,"path":"ElectronicsModules/CAEN/V830.md","ref":"ElectronicsModules/CAEN/V830.md","articles":[]},"previous":{"title":"CAEN/V785+","level":"1.3.29","depth":2,"path":"ElectronicsModules/CAEN/V785.md","ref":"ElectronicsModules/CAEN/V785.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ElectronicsModules/CAEN/V792.md","mtime":"2017-07-10T07:12:20.384Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-10T07:32:03.773Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
