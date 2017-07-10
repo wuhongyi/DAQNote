@@ -1179,14 +1179,20 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 三 5月 31 13:50:27 2017 (+0800)
-;; Last-Updated: 三 6月 28 22:47:19 2017 (+0800)
+;; Last-Updated: 一 7月 10 16:09:16 2017 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 4
+;;     Update #: 6
 ;; URL: http://wuhongyi.cn -->
 <h1 id="v775--32-channel-multievent-tdc35-300-ps">V775  32 Channel Multievent TDC(35-300 ps)</h1>
 <p>&#x8BF4;&#x660E;&#x4E66; <a href="http://wuhongyi.cn/DAQNote/pdf/ElectronicsModules/CAEN/V775_rev14.pdf" target="_blank">V775</a></p>
 <ul>
-<li>High channel density</li>
+<li>Inputs: V775: 32 ECL inputs, 110 &#x2126; impedance</li>
+<li>LSB: VME programmable from 35 to 300 ps</li>
+<li>Full Scale Range: VME programmable from 140 to 1200 ns</li>
+<li><p>Minimum Start/Stop delay: Common Start mode: 14 ns / Common Stop mode: 4 ns</p>
+</li>
+<li><p>High channel density</p>
+</li>
 <li>12 bit resolution </li>
 <li>5.7 us / 32 ch conversion time</li>
 <li>600 ns fast clear time</li>
@@ -1198,7 +1204,11 @@
 <li>Multicast commands</li>
 </ul>
 <hr>
+<p>The Model V775 is a 1-unit wide VME 6U module housing 32 Time-to-Digital Conversion channels. The Full Scale Range can be selected via VME from 140 ns to 1.2 &#xB5;s with 8 bit resolution. The board can operate both in COMMON START and in COMMON STOP mode. Each time interval between the COM signal and the input signal is converted to a voltage level by the TAC sections. The outputs of the TAC sections are multiplexed and subsequently converted by two fast ADC modules (5.7 &#xB5;s conversion time). </p>
+<hr>
 <p><img src="../../img/V775SignalConversionTimingInCommonStopMode.png" alt="Signal conversion timing in Common Stop mode"></p>
+<p>The following figure shows the LSB of the V775 as a function of the Full Scale Register setting. This is a &quot;typical&quot; case; the curve may change slightly from board to board due to the tolerance of the components (about 10%).</p>
+<p><img src="../../img/V775LSBVsFullScaleRangeRegisterSetting.png" alt="LSB Vs. Full Scale Range Register setting"></p>
 <!-- V775.md ends here -->
 
                                 
@@ -1243,7 +1253,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"CAEN/V775+","level":"1.3.28","depth":2,"next":{"title":"CAEN/V785+","level":"1.3.29","depth":2,"path":"ElectronicsModules/CAEN/V785.md","ref":"ElectronicsModules/CAEN/V785.md","articles":[]},"previous":{"title":"CAEN/V2718*","level":"1.3.27","depth":2,"path":"ElectronicsModules/CAEN/V2718.md","ref":"ElectronicsModules/CAEN/V2718.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ElectronicsModules/CAEN/V775.md","mtime":"2017-06-28T14:47:19.135Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-10T07:32:03.773Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"CAEN/V775+","level":"1.3.28","depth":2,"next":{"title":"CAEN/V785+","level":"1.3.29","depth":2,"path":"ElectronicsModules/CAEN/V785.md","ref":"ElectronicsModules/CAEN/V785.md","articles":[]},"previous":{"title":"CAEN/V2718*","level":"1.3.27","depth":2,"path":"ElectronicsModules/CAEN/V2718.md","ref":"ElectronicsModules/CAEN/V2718.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ElectronicsModules/CAEN/V775.md","mtime":"2017-07-10T08:09:16.133Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-10T15:10:32.530Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
