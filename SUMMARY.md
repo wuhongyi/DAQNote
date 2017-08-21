@@ -30,6 +30,7 @@
 	- [CAEN/N93B*](ElectronicsModules/CAEN/N93B.md)
 	- [CAEN/N96*](ElectronicsModules/CAEN/N96.md)
 	- [CAEN/V1190+](ElectronicsModules/CAEN/V1190.md)
+	- [CAEN/V1290+](ElectronicsModules/CAEN/V1290.md)
 	- [CAEN/V259+](ElectronicsModules/CAEN/V259.md)
 	- [CAEN/V2718*](ElectronicsModules/CAEN/V2718.md)
 	- [CAEN/V775+](ElectronicsModules/CAEN/V775.md)
